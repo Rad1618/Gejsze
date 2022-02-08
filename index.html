@@ -1,0 +1,86 @@
+<html>
+<head>
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+    <meta charset="utf-8" />
+    <title>Plac Budowy</title>
+    <script type="text/javascript" src="./script_canvas.js"></script>
+    <style>
+        table, tr, td {
+            <!-- border: 1px solid black; -->
+        }
+
+        td {
+            vertical-align: central;
+        }
+
+        body {
+            padding: 15px;
+            margin: 0;
+            margin-bottom: 25px;
+        }
+
+        .chat {
+            border: 1px solid #e4e4e4;
+            width: 400px;
+            min-height: 150px;
+            max-height: 150px;
+            overflow: auto;
+        }
+
+        .messages {
+            height: 25px;
+            width: 300px;
+        }
+
+        .message {
+            padding: 5px 0;
+        }
+
+        .text_element {
+            margin-left: 10px;
+        }
+
+        .button {
+            border-radius: 10px;
+            border: 1px solid #4e6096;
+            width: 200px;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 19px;
+            padding: 8px 16px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #283966;
+            margin: 8px;
+        }
+    </style>
+</head>
+<body onload="Draw();" onbeforeunload="Before_closing();">
+    <table style="width: 0px">
+        <tr>
+            <td colspan="2">
+                <p class="chat" id="chat"></p>
+            </td>
+            <td rowspan="5"><canvas id="plansza" height="700" width="800"></canvas></td>
+        </tr>
+        <tr>
+            <td><input class="messages" id="message_form" placeholder="Wpisz coś ..." type="text" /></td>
+            <td width="100"><button type="button" id="message_button">Send</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><p class="chat" id="users_info"></p></td>
+        </tr>
+        <tr>
+            <td><button type="button" id="button_start">START</button></td>
+        </tr>
+        <tr>
+            <td height="200"></td>
+            <td></td>
+        </tr>
+    </table>
+    <script src="./main.js"></script>
+    <script src="./canvas.js"></script>
+    <script src="./game.js"></script>
+</body>
+</html>
