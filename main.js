@@ -1,6 +1,5 @@
 ﻿const CLIENT_ID = 'vFOvI7h7IFyxdWG6'; //W te '' wpisz swoje ID
 if (CLIENT_ID === 'vFOvI7h7IFyxdWG6');
-const ROOM_NAME = prompt("Wpisz nazwę pokoju:");
 
 const DOM =
 {
@@ -65,7 +64,7 @@ drone.on('open', function (error)
     }
     console.log('Połączono ze Scaledrone');
 
-    const room = drone.subscribe('observable-' + ROOM_NAME);
+    const room = drone.subscribe(prompt("Wpisz nazwę pokoju:"));
     room.on('open', function (error)
     {
         if (error)
