@@ -1,6 +1,6 @@
 ﻿const CLIENT_ID = 'vFOvI7h7IFyxdWG6'; //W te '' wpisz swoje ID
 if (CLIENT_ID === 'vFOvI7h7IFyxdWG6');
-const ROOM_NAME = 'main'
+const ROOM_NAME = prompt("Wpisz nazwę pokoju:");
 
 const DOM =
 {
