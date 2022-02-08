@@ -1,5 +1,6 @@
-﻿const CLIENT_ID = 'vFOvI7h7IFyxdWG6'; //W te '' wpisz swoje ID
+const CLIENT_ID = 'vFOvI7h7IFyxdWG6'; //W te '' wpisz swoje ID
 if (CLIENT_ID === 'vFOvI7h7IFyxdWG6');
+var ROOM_NAME = 'main'
 
 const DOM =
 {
@@ -50,6 +51,7 @@ const drone = new ScaleDrone(CLIENT_ID,
         data:
         { // Will be sent out as clientData via events
             name: prompt("Wpisz swoje imie:"),
+            //room_name: prompt("Wpisz nazwę pokoju:"),
             //name: 'Test'
         },
     });
@@ -63,8 +65,10 @@ drone.on('open', function (error)
         return console.error(error);
     }
     console.log('Połączono ze Scaledrone');
+    ROOM_NAME = prompt("Wpisz nazwę pokoju:");
+    console.log(ROOM_NAME);
 
-    const room = drone.subscribe(prompt("Wpisz nazwę pokoju:"));
+    const room = drone.subscribe('observable-' + ROOM_NAME);
     room.on('open', function (error)
     {
         if (error)
